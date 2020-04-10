@@ -1,4 +1,6 @@
 # DeepLiDAR (Python3, Pytorch 1.4.0)
+This repo is credited to the reference from [valgur](https://github.com/valgur/surface-normal) and [JiaxiongQ](https://github.com/JiaxiongQ/DeepLiDAR)
+
 This repository is the implementation for [DeepLiDAR: Deep Surface Normal Guided Depth Prediction for Outdoor Scene from Sparse LiDAR Data and Single Color Image](http://openaccess.thecvf.com/content_CVPR_2019/papers/Qiu_DeepLiDAR_Deep_Surface_Normal_Guided_Depth_Prediction_for_Outdoor_Scene_CVPR_2019_paper.pdf). There are some difference between author's repo and mine.
 
 (1) Rewrite the code referenced from [author's repo](https://github.com/JiaxiongQ/DeepLiDAR) with python3.6 and newest version of pytorch. 
@@ -85,6 +87,7 @@ PREDICTED_RESULT_DIR = './predicted_dense' # path to save predicted figures (use
 
 ### To generate **data_depth_normals**
 Credit to https://github.com/valgur/surface-normal
+
 First, enter **surface-normal/** to build and install library. 
 ```
 cd surface-normal/
@@ -138,6 +141,7 @@ python3 test.py -m <MODEL_PATH> -n <NUM_DATA> -cpu
     -m <MODEL_PATH>
         the path of loaded model
     -cpu
+   
         if you want to use CPU to test
     -s
         if you want to save predicted figure in PREDICTED_RESULT_DIR

@@ -1,5 +1,5 @@
 # DeepLiDAR (Python3, Pytorch 1.4.0)
-This repo reference [JiaxiongQ](https://github.com/JiaxiongQ/DeepLiDAR) and [valgur](https://github.com/valgur/surface-normal)
+Thanks to [JiaxiongQ](https://github.com/JiaxiongQ/DeepLiDAR) and [valgur](https://github.com/valgur/surface-normal)
 
 This repository is the implementation for [DeepLiDAR: Deep Surface Normal Guided Depth Prediction for Outdoor Scene from Sparse LiDAR Data and Single Color Image](http://openaccess.thecvf.com/content_CVPR_2019/papers/Qiu_DeepLiDAR_Deep_Surface_Normal_Guided_Depth_Prediction_for_Outdoor_Scene_CVPR_2019_paper.pdf). There are some difference between author's repo and mine.
 
@@ -13,9 +13,9 @@ This repository is the implementation for [DeepLiDAR: Deep Surface Normal Guided
  - Use less data to train (20000 images). (Author used 85898 images, and it takes about 3 days to train)
  - Slight implementation difference 
 
-(4) I add comments on the code and make it more flexible and readable. 
+(4) Add comments on the code and make it more flexible
 
-(5) I add tensorboard visualization for every epoch
+(5) Add tensorboard visualization for every epoch
 
 
 

@@ -6,7 +6,7 @@ This repository is the implementation for [DeepLiDAR: Deep Surface Normal Guided
 (2) Clarify the structure of KITTI depth completion data
 
 (3) Make it easier to reproduce my result (**not author's result**, because by considering computational resources and time, there are some differences between author's implementation and mine)
- - Reduce model parameters. (Original model is too large to put onto single GPU, 3 GeForce GTX 1080 Ti GPUs)
+ - Reduce model parameters from 143,981,012 to 47,750,544. (Original model is too large to put onto single GPU, 3 GeForce GTX 1080 Ti GPUs)
  - Smaller training image (128 x 256). (Author uses 256 x 512)
  - Use less data to train (20000 images). (Author used 85898 images, and it takes about 3 days to train)
  - Slight implementation difference 

@@ -1,6 +1,9 @@
-import os 
+import os
+from multiprocessing import Pool, cpu_count
+
+# surface_normal library from https://github.com/valgur/surface-normal
 from surface_normal import normals_from_depth
-from skimage import io
+from tqdm.auto import tqdm
 from env import KITTI_DATASET_PATH
 
 INTRINSICS = {
@@ -13,13 +16,17 @@ INTRINSICS = {
 
 KITTI_GT_PATH = os.path.join(KITTI_DATASET_PATH, 'data_depth_annotated')
 KITTI_NORMALS_PATH = os.path.join(KITTI_DATASET_PATH, 'data_depth_normals')
+num_cores = cpu_count()
 
+def _process(args):
+    normals_from_depth(*args, use_cuda=True)
+    return args[1]
 
 if __name__ == '__main__':
     if not os.path.exists(KITTI_NORMALS_PATH):
         os.mkdir(KITTI_NORMALS_PATH)
-    
-    count = 1
+
+    processing_args = []
     for split in ['train', 'val']:
         date_folder_list = sorted(os.listdir(os.path.join(KITTI_GT_PATH, split))) # list of 2011_XX_XX_drive_XXXX_sync
         
@@ -44,12 +51,9 @@ if __name__ == '__main__':
                     normal_img_path = os.path.join(normal_folder, img_fn)
  
                     if not os.path.exists(normal_img_path):
-                        normals_from_depth(gt_img_path, normal_img_path,
-                                           intrinsics=intrinsic,
-                                           window_size=15,
-                                           max_rel_depth_diff=0.1
-                                        )
+                        processing_args.append((gt_img_path, normal_img_path, intrinsic, 15, 0.1))
 
-                    print("processed {} images".format(count))
-                    count += 1
-        
+    print("Using", num_cores, "cores")
+    pool = Pool(num_cores)
+    for _ in tqdm(pool.imap_unordered(_process, processing_args), total=len(processing_args)):
+        pass

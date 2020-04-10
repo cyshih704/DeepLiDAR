@@ -84,10 +84,10 @@ PREDICTED_RESULT_DIR = './predicted_dense' # path to save predicted figures (use
 
 
 ### To generate **data_depth_normals**
-
-First, install the `surface_normal` library from [valgur/surface-normal](https://github.com/valgur/surface-normal). 
+Credit to https://github.com/valgur/surface-normal
+First, enter **surface-normal/** to build and install library. 
 ```
-pip install -v git+https://github.com/valgur/surface-normal.git
+cd surface-normal/
 ```
 Second, run the following script to generate **data_depth_normals**
 ```

@@ -85,7 +85,9 @@ PREDICTED_RESULT_DIR = './predicted_dense' # path to save predicted figures (use
 
 ### To generate **data_depth_normals**
 First, enter **surface-normal/** to build and install library. 
-
+```
+cd surface-normal/
+```
 Second, run the following script to generate **data_depth_normals**
 ```
 python3 generate_normals.py

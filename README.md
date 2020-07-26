@@ -177,16 +177,16 @@ tensorboard --logdir runs/
 
 ## Experiment of setting A
 Input data (rgb image, lidar image)
-![image](https://github.com/ChingYenShih/EECS-545-Final/blob/master/final/figure/input.png)
+![image](https://github.com/ChingYenShih/DeepLiDAR/blob/master/final/figure/input.png)
 
 Groundtruth (surface normal, dense depth)
-![image](https://github.com/ChingYenShih/EECS-545-Final/blob/master/final/figure/gt.png)
+![image](https://github.com/ChingYenShih/DeepLiDAR/blob/master/figure/gt.png)
 
 Masked predicted result (masked surface normal, masked dense depth)
-![image](https://github.com/ChingYenShih/EECS-545-Final/blob/master/final/figure/mask_pred.png)
+![image](https://github.com/ChingYenShih/DeepLiDAR/blob/master/final/figure/mask_pred.png)
 
 Predicted result (surface normal, dense depth)
-![image](https://github.com/ChingYenShih/EECS-545-Final/blob/master/final/figure/pred.png)
+![image](https://github.com/ChingYenShih/DeepLiDAR/blob/master/final/figure/pred.png)
 
 
 ## Citation 
